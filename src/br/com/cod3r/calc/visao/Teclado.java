@@ -1,5 +1,7 @@
 package br.com.cod3r.calc.visao;
 
+import br.com.cod3r.calc.modelo.Memoria;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -71,7 +73,7 @@ public class Teclado extends JPanel implements ActionListener {
         if (e.getSource() instanceof JButton) {
             JButton botao = (JButton) e.getSource();
             System.out.println(botao.getText());
+            Memoria.getInstancia().processarComando(botao.getText());
         }
-
     }
 }
