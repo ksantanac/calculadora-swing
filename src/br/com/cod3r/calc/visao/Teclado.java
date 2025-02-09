@@ -17,6 +17,10 @@ public class Teclado extends JPanel {
 
         setLayout(layout);
 
+        c.weightx = 1;
+        c.weighty = 1;
+        c.fill = 1;
+
         // Linha 1
         adicionarBotao("AC", CINZA_ESCURO, c, 0, 0);
         adicionarBotao("+/-", CINZA_ESCURO, c, 1, 0);
@@ -42,8 +46,10 @@ public class Teclado extends JPanel {
         adicionarBotao("+", LARANJA, c, 3, 3);
 
         // Linha 5
+        c.gridwidth = 2;
         adicionarBotao("0", CINZA_CLARO, c, 0, 4);
-        adicionarBotao("0", CINZA_CLARO, c, 1, 4);
+
+        c.gridwidth = 1;
         adicionarBotao(",", CINZA_CLARO, c, 2, 4);
         adicionarBotao("=", LARANJA, c, 3, 4);
 
@@ -53,7 +59,7 @@ public class Teclado extends JPanel {
         c.gridx = x;
         c.gridy = y;
         Botao botao = new Botao(texto, cor);
-        add(botao);
+        add(botao, c);
     }
 
 }
